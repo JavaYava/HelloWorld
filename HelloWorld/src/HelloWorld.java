@@ -18,6 +18,7 @@ public class HelloWorld {
 	    System.out.format("%-10-5s%10s%5s","Period 2","Chemistry","10:07","11:24/n");
 	    System.out.format("%-10s%-5s%10s%5s", "Period 3","Computer Science","12:26","1:42/n");
 	    System.out.format("%-10s%-5s%10s%5s", "Period 4","Illustration","1:48","3:05/n");
+	 
 	    
 	}
 	
