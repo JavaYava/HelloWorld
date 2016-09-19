@@ -10,13 +10,13 @@ public class JavaTerminology {
 		
 	System.out.format("Package: A group of related classes.Also called a library.\n");
 	System.out.format("\n");
-	System.out.format("String A set of characters.\n");
+	System.out.format("String: A set of characters.\n");
 	System.out.format("\n");
-	System.out.format("Inheritance An object-oriented language feature.\n");
+	System.out.format("Inheritance: An object-oriented language feature.\n");
 	System.out.format("\n");
-	System.out.format("Source code The code typed by a programmer.\n");
+	System.out.format("Source code: The code typed by a programmer.\n");
 	System.out.format("\n");
-	System.out.format("Code conventions A set of guildlines for writing an application.");
+	System.out.format("Code conventions: A set of guildlines for writing an application.");
 	
 		
 }
