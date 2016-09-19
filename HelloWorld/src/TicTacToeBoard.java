@@ -9,17 +9,17 @@ public class TicTacToeBoard {
 	// TODO Auto-generated method stub
 
 
-System.out.format("%10s %5s","|","|\n");
-System.out.format("%10s %5s","|","|\n");
-System.out.format("%10s %5s","|","|\n");
-System.out.format("---------------------\n");
-System.out.format("%10s %2s %1s","|","X","|\n");
-System.out.format("%10s %5s","|","|\n");
-System.out.format("%10s %5s","|","|\n");
-System.out.format("---------------------\n");
-System.out.format("%10s %5s","|","|\n");
-System.out.format("%10s %5s","|","|\n");
-System.out.format("%10s %5s","|","|\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("-------------------------\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("%10s %3s %3s","|","x","|\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("------------------------\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("%10s %7s","|","|\n");
+System.out.format("%10s %7s","|","|\n");
 
 
 
