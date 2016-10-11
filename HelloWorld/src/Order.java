@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 /*className.java
 		 * Order
-		 * Oct/26/16
+		 * Oct/11/16
 		 * Emira Refai
 		 */
 public class Order {
