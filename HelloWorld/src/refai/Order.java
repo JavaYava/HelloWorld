@@ -1,9 +1,10 @@
+package refai;
 import java.util.Scanner;
 import java.text.DecimalFormat;
-/*className.java
-		 * Order
+/*Order.java
+		 * This program takes the order of the user.
 		 * Oct/11/16
-		 * Emira Refai
+		 * Emira Refai 
 		 */
 public class Order {
 
@@ -52,6 +53,7 @@ public class Order {
 		
 		System.out.println("Enter the amount tendered:");
 		amount=scan.nextDouble();
+		
 		System.out.format("\n");
 		
 		System.out.println("Change:" + (amount-burger*1.69-soda*0.99-fries*1.09-tax));

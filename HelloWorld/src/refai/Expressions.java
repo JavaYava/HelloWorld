@@ -1,7 +1,8 @@
+package refai;
 import java.util.Scanner;
 
-/*className.java
-		 * Arithmetic Expressions
+/*arithmeticExpressions.java
+		 * This program displays how to type arithmetic expressions in Java.
 		 * Sept/26/16
 		 * Emira Refai
 		 */
