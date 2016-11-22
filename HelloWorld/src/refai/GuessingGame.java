@@ -34,9 +34,9 @@ public final class GuessingGame {
 			
 		
 	   	
-	   	System.out.println("Computer's Number:" + b);
 	   	
-	   	System.out.println("Player's Number:" + a);
+	   	
+	   	System.out.println( a);
 	   	
 	   	if (a<b)
 	   		
