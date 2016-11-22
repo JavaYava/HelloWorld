@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 
 	/*Dice2.java
-	 * dice rolling program to continue until the user wants to end.
-	 * Nov/9/16
+	 * dice rolling program to continue until the user wants the game to end.
+	 * Nov/22/16
 	 * Emira Refai
 	 */
 public class Dice2 {	

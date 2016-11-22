@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 
 /*Investment.java
-		 * takes an integer as input,then tests it to see if it is positive or negative, and also tests it to see if it is divisible by 7. 
-		 * Nov/15/16
+		 * This program is supposed to display how many years it would take for an investment of $2500 to reach $5000.
+		 * Nov/22/16
 		 * Emira Refai
 		 */
 public class Investment {

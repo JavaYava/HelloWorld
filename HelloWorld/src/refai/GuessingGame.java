@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 
 /*GuessingGame.java
-		 * This program is a number guessing game played between the user and the computer.
-		 * Nov/11/16
+		 * This program is a updated verison of the number guessing game played between the user and the computer but in this verison you cna guess as many times until you win.
+		 * Nov/22/16
 		 * Emira Refai
 		 */
 
