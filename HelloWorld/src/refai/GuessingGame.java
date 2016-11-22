@@ -16,14 +16,23 @@ public final class GuessingGame {
 		// TODO Auto-generated method stub
 	
 		Scanner scan=new Scanner(System.in);
-		
 		int a; int b;
 		
+		
+		do{
+		
+			
 		System.out.println("Enter a number between 1 and 20:");
 	
 	   	a=scan.nextInt();
-	   	
-	   	b= (int) (Math.random()*20)+1;
+		b= (int) (Math.random()*20)+1;
+		
+		
+		
+		
+			
+			
+		
 	   	
 	   	System.out.println("Computer's Number:" + b);
 	   	
@@ -43,8 +52,11 @@ public final class GuessingGame {
 	  else if (a>b)
 		  
 		  System.out.println("Better luck next time.");
+	   
+		
+		}while (a<b || a>b);
 	   	
-	   	
+		
 	   	
 	   	
 	   	
