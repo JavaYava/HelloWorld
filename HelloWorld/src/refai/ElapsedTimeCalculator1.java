@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 
 /*ElapsedTimeCalculator.java
- * This program is a updated verison of the number guessing game played between the user and the computer but in this verison you cna guess as many times until you win.
- * Nov/22/16
+ * This program is a Time calculator that will display the time you enter.
+ * Nov/24/16
  * Emira Refai
  */
 
@@ -24,7 +24,7 @@ public class ElapsedTimeCalculator1 {
 		System.out.println("Enter the starting hour:");
 		time=scan.nextInt();
 		scan.nextLine();
-		
+
 		System.out.println("Enter am or pm:");
 		amorpm=scan.nextLine();
 
@@ -55,8 +55,8 @@ public class ElapsedTimeCalculator1 {
 
 		}
 
-		
-		
+
+
 
 
 	}
