@@ -1,3 +1,4 @@
+package refai.copy;
 
 	/*className.java
 		 * TicTacToeRules
