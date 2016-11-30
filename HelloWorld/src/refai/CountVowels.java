@@ -13,9 +13,27 @@ public class CountVowels {
 
 		Scanner scan=new Scanner(System.in);
 		
+		String sentence;
+		
+		System.out.println("Enter Text:");
+		
+		sentence=scan.nextLine();
+		
+		System.out.println("The number of vowels in Java Programming Assignment is" );
+		
+		//vowels = a, e, i, o, u
+	
+		
+		
+
+		
+	for (int a,e,i,o,u=1; a,e,i,o,u<=10; a,e,i,o,u++)
+		
+	
 		
 		
 		
-		
+	
+	
 	}
 }
