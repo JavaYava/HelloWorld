@@ -15,7 +15,7 @@ public class Hills
 
 
 		Console c = new Console(); 
-		BufferedImage[] pic = new BufferedImage[5];
+		BufferedImage[] pic = new BufferedImage[7];
 		try {
 			pic[0]=ImageIO.read(new File("pics/village.jpg"));
 		} catch (IOException e) {
@@ -23,7 +23,7 @@ public class Hills
 			e.printStackTrace();
 		}
 		try {
-			pic[1]=ImageIO.read(new File("pics/bridge.jpg"));
+			pic[1]=ImageIO.read(new File("pics/brigde.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,12 +42,23 @@ public class Hills
 		}		
 		
 		try {
-			pic[4]=ImageIO.read(new File("pics/Dragoncave.jpg"));
+			pic[4]=ImageIO.read(new File("pics/dragoncave.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		try {
+			pic[5]=ImageIO.read(new File("pics/cave.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			pic[6]=ImageIO.read(new File("pics/river.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		
 
@@ -70,7 +81,7 @@ public class Hills
 		c.clear();
 
 		do{
-			c.drawImage(pic[0], 0, 0, null);
+			c.drawImage(pic[0], 0, 100, null);
 			
 			c.println("You awaken under a pile of rubble in a cold sweat, your vision blurry, head \npounding as the memories flow back to you of what happened last night"
 					+"as you look around at the ashed remains of your village. With the smoke of the still burning houses and the sounds of screaming ringing in your ears as the scene won't stop replaying."
@@ -85,7 +96,7 @@ public class Hills
 
 			if(direction.equalsIgnoreCase("Hills")){
 				
-				c.drawImage(pic[1], 0, 0, null);
+				
 				
 				
 				c.println("The trail through the hills takes you up a steeper path the deeper you venture into the hills, the soft grass of forest has long since turned into hard gravel as it crunches beneath your feet. It was a rather peaceful walk but"
@@ -121,12 +132,14 @@ public class Hills
 
 						c.clear();
 						
-						c.drawImage(pic[1], 0, 0, null);
+						c.drawImage(pic[1], 0, 100, null);
+					
 						
-
 						c.println("Correct. The man sighs and lets you cross the bridge. You come across th mountains and see a cave you enter a cave inside you see a"
 								+ " sleeping dragon."
 								+ "do you try to sneak attack or rush in and attack it ");
+						c.drawImage(pic[4], 0, 100, null);
+						
 						c.println("1.Sneak Attack");
 						c.println("2.Attack");
 
@@ -241,7 +254,7 @@ public class Hills
 
 				if(direction.equalsIgnoreCase("Left")){
 					c.clear();
-					c.drawImage(pic[2], 0, 0, null);
+					c.drawImage(pic[6], 0, 0, null);
 
 					c.println("The path leads you to a rushing a river, the trail continues on the other side ");
 					c.println("Do you attempt to cross the river on foot or try and find another way across?");
@@ -269,9 +282,10 @@ public class Hills
 
 
 				}
-			c.drawImage(pic[2], 0, 0, null);
+			
 				if(direction.equalsIgnoreCase("Right")){
 					c.clear();
+					c.drawImage(pic[2], 0, 100, null);
 					c.println("The path on the right leads you to a cave.");
 					c.println("Do you risk adventuring inside?");
 					c.println("1.In");
@@ -281,13 +295,16 @@ public class Hills
 					
 
 					if(direction.equalsIgnoreCase("Stay Out")){
-						c.drawImage(pic[3], 0, 0, null);
+						c.drawImage(pic[3], 0, 100, null);
 						c.println("You decide to not go into the cave and continue walking. You get tired and \ndecide to take seat by a tree to rest, you close your eyes and drift off too sleep. \nYou awaken an hour later face to face"
 								+ "with a bear, the last moments of your life \nwere spent screaming in shock, as the bear bites into you throat.");
 						c.println("You died");
 					}
 					if (direction .equalsIgnoreCase("In")){
 						c.clear();
+					
+						c.drawImage(pic[5], 0, 100, null);
+
 
 						c.println("You muster your courage and walk into the cave, you try to avoid making any noise by side shuffling around to not"
 								+ " step on any of the animal bones that are littered around the floor,  as you reach towards the end of the cave you see it"
@@ -331,6 +348,8 @@ public class Hills
 
 								c.println("You sucessfully managed to sneak around the bear without waking it, "
 										+ "you go up the stone stairs and continue your journey.");
+								c.clear();
+								c.drawImage(pic[6], 0, 0, null);
 
 								c.println("The path leads you to a rushing a river, the trail continues on the other side ");
 								c.println("Do you attempt to cross the river on foot or try and find another way across?");
@@ -344,9 +363,11 @@ public class Hills
 									
 									counter = 0;
 									do{
+										
 										c.println("The river was alot deeper then you thought it would, you become sumbmerged "
 												+ "under the water. ");
-										c.clear();
+									
+										
 										c.println("Do you try to escape?");
 										c.println("1.Escape");
 										
