@@ -27,7 +27,9 @@ public class CountVowels {
 		
 
 		
-	for (int a,e,i,o,u=1; a,e,i,o,u<=10; a,e,i,o,u++)
+	for ( "A"=1; "A"<=10; "A"++);
+		
+		
 		
 	
 		
