@@ -407,3 +407,6 @@ public class Hills
 		}
 
 	}
+
+//Story + Pictures + Cave Code part - Aisha
+//Story + Pictue Resizing + Editing + Coding - Emira

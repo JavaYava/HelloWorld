@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class listofNames1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scan=new Scanner(System.in);
+
+		int[]names;
+
+		
+
+		System.out.println("How names would you like?");
+		names =scan.nextInt();
+		
+
+		
+		for(int x=1; x<names; x++){
+
+			System.out.println(names);
+			
+			
+
+
+		}
+
+	}
+}
