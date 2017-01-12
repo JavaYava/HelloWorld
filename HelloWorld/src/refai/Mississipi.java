@@ -58,7 +58,7 @@ public class Mississipi {
 		System.out.println(" SSSSS");
 	}
 	public static void printP(){
-		System.out.println("PPPPPP");
+		System.out.println("PPPPP ");
 		System.out.println("P    P");
 		System.out.println("P    P");
 		System.out.println("PPPPP");
