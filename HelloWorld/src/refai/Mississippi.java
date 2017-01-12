@@ -32,9 +32,9 @@ public class Mississippi {
 		printSpace();
 		printI();
 	}
-/**
- * Draws a M 
- */
+	/**
+	 * Draws a M 
+	 */
 	public static void  printM(){
 		System.out.println("M     M");
 		System.out.println("MM   MM" );
@@ -78,7 +78,7 @@ public class Mississippi {
 		System.out.println("P");
 		System.out.println("P");
 		System.out.println("P");
-		
+
 	}
 	/**
 	 * Draws a space
