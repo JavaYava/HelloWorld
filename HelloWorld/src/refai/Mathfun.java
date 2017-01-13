@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Jan/13/17
  * Emira Refai
  */
-public class mathFun {
+public class Mathfun {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Type in two numbers you would like to use");

@@ -1,14 +1,11 @@
 package refai;
 
-//Write a program to spell out MISSISSIPPI using block letters like the following:
-
-//HINT: Use one method for each letter.
-
-
-//Mississippi
-
 public class Mississippi {
-
+	/*mississippi.java
+	 * This program creates the word Mississippi.
+	 * Jan/13/17
+	 * Emira Refai
+	 */
 	public static void main(String[] args){
 		printM();
 		printSpace();
