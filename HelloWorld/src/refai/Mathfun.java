@@ -1,3 +1,4 @@
+package refai;
 import java.util.Scanner;
 /*MathFun.java
  * This program is a 4 system calculator.
