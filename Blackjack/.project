@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Blackjack</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>pics/INSTRUCTIONS.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/INSTRUCTIONS.jpg</locationURI>
+		</link>
+		<link>
+			<name>pics/INSTRUCTIONS.png</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/My%20Pictures/INSTRUCTIONS.png</locationURI>
+		</link>
+		<link>
+			<name>pics/TITLE PAGE.png</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/My%20Pictures/TITLE%20PAGE.png</locationURI>
+		</link>
+		<link>
+			<name>pics/king.jpg</name>
+			<type>1</type>
+			<location>C:/Users/324062843/Downloads/king.jpg</location>
+		</link>
+	</linkedResources>
+</projectDescription>
