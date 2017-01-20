@@ -12,250 +12,130 @@ import javax.imageio.ImageIO;
 
 public class Blackjack2 {
 	//GLOBAL VARIABLES
-	static int[] Card = new int [13] ;
-	static BufferedImage[] pics = new BufferedImage[14];
+	static int[] card = new int [13] ;
+	static Console c = new Console(1000,1000); 
 
-
-	static Console c = new Console(); 
-	static int Card1;
-	static int Card2;
-	static int Total;
-	static int ComputerTotal;
-	static int Computer;
-	static int Random1=((int)Math.random()*13);
-	static int Random2=((int)Math.random()*13);
-
-	static int[] Counter;
 	public static void main(String[] args) {
 
 
-		//CARD IMAGE
-		//try {
-		//	pics[0]=ImageIO.read(new File("pics/TITLE PAGE.png"));
-		//} catch (IOException e) {
-		// TODO Auto-generated catch block
-		//e.printStackTrace();
-		//}
-
-
-
-
 		//CARD VALUES!
-		Card[0] = 1; 
-		Card[1] = 2;
-		Card[2] = 3;
-		Card[3] = 4;
-		Card[4] = 5;
-		Card[5] = 6;
-		Card[6] = 7;
-		Card[7] = 8;
-		Card[8] = 9;
-		Card[9] = 10;
-		Card[10] = 10;
-		Card[11] = 10;
-		Card[12] = 10;
+		card[0] = 1; 
+		card[1] = 2;
+		card[2] = 3;
+		card[3] = 4;
+		card[4] = 5;
+		card[5] = 6;
+		card[6] = 7;
+		card[7] = 8;
+		card[8] = 9;
+		card[9] = 10;
+		card[10] = 10;
+		card[11] = 10;
+		card[12] = 10;
 
-
-		Card1=Card[Random1];
-		Card2=Card[Random2];
-
-		//pics[0]=ImageIO.read(new File("pics/king.jpg"));// (ADD PICTURES ON MONDAY)
-
-		int direction; String Action;
+		int direction; String action;
 
 		//1. DISPLAY TITLE PAGE
-
-		c.drawImage(pics[0], 100, 100, null);
+		try {
+			c.drawImage(ImageIO.read(new File("pics/TITLE PAGE.jpg")), 100, 100,400,400, null);
+		} catch (IOException e) {
+			c.println("WHOOPS");
+		}
 
 		c.println("Welcome to Black Jack type 1 to begin.");
 		direction=c.readInt();
 
 		c.clear();
-
-		//c.drawImage(pics[1], 100, 100, null);//2. Instructions 
-
+		//2. Instructions 
+		try {
+			c.drawImage(ImageIO.read(new File("pics/INSTRUCTIONS.jpg")), 100, 100, 400,400, null);
+		} catch (IOException e) {
+			c.println(""); //TYPE INSTRUCTIONS FOR ERROR
+		}
 		c.println("Type 1 to continue");
-
+		c.getChar();
 		c.clear();
-		
-		getRandomCards(Card1,Card2); // GETS CARD VALUES 
-		
-	
-		Cards(); //GETS CARD PICTURE BASED ON RANDOM NUMBER
 
+		//GETS CARD PICTURE BASED ON RANDOM NUMBER
+		int card1=getRandomCard();
+		int card2=getRandomCard();
+		drawCard(card1,100,100); 
+		drawCard(card2,200,200);
 
-		c.println(Total);
-
-
+		int total=getCardTotal(card[card1],card[card2]); // GETS CARD VALUES 
+		c.println(total);
 
 		c.println("Would you like to hit or stay?");
+		action=c.readLine();
 
-		Action=c.readLine();
+		while(action.equalsIgnoreCase("Hit")){ //HIT 
 
-		if(Action.equalsIgnoreCase("Hit")){ //HIT 1
-
-			c.println(Total+Card1);
+			int cardhit=getRandomCard();
+			drawCard(cardhit,300,300);
+			total=getCardTotal(total,card[cardhit]);
+			c.println(total);
 
 			c.println("Would you like to hit or stay");
-			Action=c.readLine();
-
-			if(Action.equalsIgnoreCase("Hit")){ //HIT2
-
-				c.clear();
-
-				getRandomCard2();
-				Cards();
-
-				c.println(Total+Card2);
-
-				if(Total+Card2<21);
-
-				c.clear();
-
-				c.println("Would you like to hit or stay");
-				Action=c.readLine();
-
-				if(Action.equalsIgnoreCase("hit")){
-
-					c.println(Total+Card1);
-				}
-
-
-
-			}
-			getRandomCard1();
-			Cards();
-
-			c.println(Card1+Total);
-
-			if(Card1+Card2<21){
-
-
-
-
-
-
-				if(Card1+Card2<21){
-
-					c.println(Card1+Card2);
-
-
-				}
-				else if (Card1+Card2<21){
-
-					c.println(Card1+Card2);
-
-
-
-
-				}
-
-
-				if(Action.equalsIgnoreCase("Stay")){ //PLAYER STOPS DRAWING COMPUTERS TURN TO PLAY
-					
-					c.println(Total);
-					
-				
-				
-					if(Total< ComputerTotal){ //COMPUTER HAS HIGHER VAULE
-						
-						c.println("You Lose");
-					
-					}
-					if(Total>ComputerTotal){
-						c.print(ComputerTotal);
-						c.println("YOU WON");
-						
-						
-					}
-					
-
-
-
-
-
-				}
-
-			}
-
+			action=c.readLine();
 		}
 
+		c.println(total);
 
-		// prints card method	
-
-
-
-
+		//
+		//			if(total< ComputerTotal){ //COMPUTER HAS HIGHER VAULE
+		//
+		//				c.println("You Lose");
+		//
+		//			}
+		//			if(total>ComputerTotal){
+		//				c.print(ComputerTotal);
+		//				c.println("YOU WON");
+		//
+		//
+		//			}
 	}
-	public static int ComputersTotal(int ComputerCard1,int ComputerCard2){
+
+
+
+	public static int getCardTotal(int card1, int card2){ // DRAWS A RANDOM CARD FOR CARDS
+		return card1+card2;
+	}
+
+
+	public static int getRandomCard(){
+		return (int)(Math.random()*13);
+	}
+
+
+	public static void drawCard(int card, int x,int y){ //cards method
+
+		BufferedImage[] pics = new BufferedImage[14];
+		//CARD IMAGE
 		
-		ComputerTotal=Card1+Card2;
-		return ComputerTotal;
-		
-	}
 
-	public static void ComputersTurn(){
-		c.println(Card1+Card2);
-	
-		
-		
-	}
-	public static void Hit(){
-		
-		Total=Total+Card1;
-
-	}
-	public static int getRandomCards(int Card1, int Card2){ // DRAWS A RANDOM CARD FOR CARDS
-
-		Total=Card1+Card2;
-
-		return Total;
-	}
-	public static void getRandomCard2(){ //DRAWS A CARD FOR CARD2 SLOT 
-
-
-		Card2=(Card[Random2]);
-	}
-
-	public static void getRandomCard1(){
-
-		Card1=(Card[Random1]);
-	}
-
-
-	public static void Cards(){ //cards method
-
-
-		if(Card1==1 || Card2==1){
-
-			c.drawImage(pics[0], 50,50,null);
-
-
+		if(card==1 ){
+			c.drawImage(pics[0], x,y,null);
 		}
-
-		if(Card1==2 || Card2==2){
-
-			c.drawImage(pics[1], 100,100,null);
+		if(card==2 ){
+			c.drawImage(pics[1], x,y,null);
 		}
-		if(Card1==3 || Card2==3){
-			c.drawImage(pics[2],100,100,null);
+		if(card==3){
+			c.drawImage(pics[2],x,y,null);
 		}
-		if(Card1==4 || Card2==4){
-			c.drawImage(pics[3],100,100,null);
-
-			//
+		if(card==4 ){
+			c.drawImage(pics[3],x,y,null);
 		}
-		if(Card1==5 || Card2==5){
-			c.drawImage(pics[4],100,100,null);
+		if(card==5 ){
+			c.drawImage(pics[4],x,y,null);
 		}
-		if(Card1==6 || Card2==6){
-			c.drawImage(pics[5],100,100,null);
+		if(card==6){
+			c.drawImage(pics[5],x,y,null);
 		}
-		if(Card1==7 || Card2==7){
-			c.drawImage(pics[6],100,100,null);
+		if(card==7 ){
+			c.drawImage(pics[6],x,y,null);
 		}
-		if(Card1==8 || Card2==8){
-			c.drawImage(pics[7],100,100,null);
+		if(card==8 ){
+			c.drawImage(pics[7],x,y,null);
 		}
 	}
 

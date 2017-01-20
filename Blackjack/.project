@@ -26,6 +26,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/My%20Pictures/INSTRUCTIONS.png</locationURI>
 		</link>
 		<link>
+			<name>pics/TITLE PAGE.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/TITLE%20PAGE.jpg</locationURI>
+		</link>
+		<link>
 			<name>pics/TITLE PAGE.png</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/My%20Pictures/TITLE%20PAGE.png</locationURI>
