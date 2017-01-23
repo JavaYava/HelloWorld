@@ -1,7 +1,7 @@
 package refai;
 import hsa_new.Console;
 
-
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,157 +10,225 @@ import javax.imageio.ImageIO;
 
 
 
-public class BlackJack {
+public class BlackJack{
 	//GLOBAL VARIABLES
-	static int[] Card = new int [13] ;
-	static BufferedImage[] pics = new BufferedImage[14];
-
-
+	static int[] card = new int [13];
 	static Console c = new Console(); 
-	static int Card1=(Card[(int)Math.random()*12+0]);
-	static int Card2=(Card[(int)Math.random()*12+0]);
-	static int Total;
-
-	static int[] Counter;
+	static String restart;
 	public static void main(String[] args) {
+		c.setTextColor(Color.white);
+		c.setTextBackgroundColor(Color.black);
+		do{
+			c.clear();
 
-		//CARD IMAGE
-		//try {
-		//	pics[0]=ImageIO.read(new File("pics/TITLE PAGE.png"));
-		//} catch (IOException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-		//}
+			//CARD VALUES!
+			card[0] = 1; 
+			card[1] = 2;
+			card[2] = 3;
+			card[3] = 4;
+			card[4] = 5;
+			card[5] = 6;
+			card[6] = 7;
+			card[7] = 8;
+			card[8] = 9;
+			card[9] = 10;
+			card[10] = 10;
+			card[11] = 10;
+			card[12] = 10;
+
+			String action;
+
+			//1. DISPLAY TITLE PAGE
+			try {
+				c.drawImage(ImageIO.read(new File("pics/TITLEPAGE.jpg")), 0, 0, 600,500,null);
+			} catch (IOException e) {
+				c.println("WHOOPS");
+			}
 
 
+			c.getChar();
 
+			c.clear();
+			//2. Instructions 
+			try {
+				c.drawImage(ImageIO.read(new File("pics/INSTRUCTIONS.jpg")), 100, 100, 400,400, null);
+			} catch (IOException e) {
+				c.println(""); //TYPE INSTRUCTIONS FOR ERROR
+			}
+			c.println("Press any key to start");
+			c.getChar();
+			c.clear();
 
-		//CARD VALUES!
-		Card[0] = 1; 
-		Card[1] = 2;
-		Card[2] = 3;
-		Card[3] = 4;
-		Card[4] = 5;
-		Card[5] = 6;
-		Card[6] = 7;
-		Card[7] = 8;
-		Card[8] = 9;
-		Card[9] = 10;
-		Card[10] = 10;
-		Card[11] = 10;
-		Card[12] = 10;
-		
+			//GETS CARD PICTURE BASED ON RANDOM NUMBER
+			int card1=getRandomCard();
+			int card2=getRandomCard();
+			drawCard(card1,100,100); 
+			drawCard(card2,200,200);
 
-		
+			int total=getCardTotal(card[card1],card[card2]); // GETS CARD VALUES 
+			c.println(total);
 
-		//pics[0]=ImageIO.read(new File("pics/king.jpg"));// (ADD PICTURES ON MONDAY)
-
-		int direction; String Action;
-
-		//1. DISPLAY TITLE PAGE
-
-		//c.drawImage(pics[0], 100, 100, null);
-
-		c.println("Welcome to Black Jack type 1 to begin.");
-		direction=c.readInt();
-
-		c.clear();
-
-		//c.drawImage(pics[1], 100, 100, null);//2. Instructions 
-
-		c.println("Type 1 to continue");
-
-		c.clear();
-
-		 getRandomCards(Card1,Card2); // GETS CARD VALUES 
-		 
-
-		Cards(); //GETS CARD PICTURE BASED ON RANDOM NUMBER
-		
-		c.println(Total);
-		
-		
-			
 			c.println("Would you like to hit or stay?");
-			
-			
-			Action=c.readLine();
+			action=c.readLine();
 
-			if(Action.equalsIgnoreCase("Hit")){
-				getRandomCard1();
-					Cards();
+			while(total<21 && action.equalsIgnoreCase("Hit")){ //HIT 
 
-					if(Card1+Card2>21){
-						
-						c.println(Card1+Card2);
+				int cardhit=getRandomCard();
+				drawCard(cardhit,300,300);
+				total=getCardTotal(total,card[cardhit]);
+				c.println(total);
 
-						c.println("BUST");
-						c.println("YOU LOSE");
-						if(Card1+Card2<21){
-							
-							c.println(Card1+Card2);
-							
-							
-						}
+				c.println("Would you like to hit or stay");
+				action=c.readLine();
+			}
+
+			c.println(total); // WHEN PLAYER 1 STOPS HITTING.
+
+			if(total>21){
+				c.clear();
+				c.println("BUST PLAYER 2 WINS");
+				c.println("Would you like to play again?");
+				restart=c.readLine();
+			}
+			if(total==21){
+				c.clear();
+				c.println("BLACK JACK");
+				c.println("PLAYER 1 WINS");
+				c.println("Would you like to play again?");
+				restart=c.readLine();
+			}
 
 
-						if(Action.equalsIgnoreCase("Stay")){
 
+			//ADD PLAYER 2 HERE
+			c.clear();
+			String action2;
+			c.println("Player 2 Press any key to start");
+			c.getChar();
+			c.clear();
 
-						}
+			//GETS CARD PICTURE BASED ON RANDOM NUMBER
+			int card3=getRandomCard();
+			int card4=getRandomCard();
+			drawCard(card3,100,100); 
+			drawCard(card4,200,200);
 
-					}
+			int total2=getCardTotal(card[card3],card[card4]); // GETS CARD VALUES 
+			c.println(total2);
 
+			c.println("Would you like to hit or stay?");
+			action2=c.readLine();
+
+			while(total2<21 && action2.equalsIgnoreCase("Hit")){ //HIT 
+
+				int cardhit=getRandomCard();
+				drawCard(cardhit,300,300);
+				total2=getCardTotal(total2,card[cardhit]);
+				c.println(total2);
+
+				c.println("Would you like to hit or stay");
+				action2=c.readLine();
+			}
+
+			c.println(total2); // WHEN PLAYER2 STOPS HITTING.
+			{
+				if (total2==21){
+					c.clear();
+					c.println("BLACK JACK");
+					c.println("PLAYER 2 WINS");
+					c.println("Would you like to play again?");
+					restart=c.readLine();
 				}
 
 
-		// prints card method	
+			}
+			if (total>total2 && total<21){
+				c.clear();
+				c.println("PLAYER 1 WINS");
+				c.println("Would you like to play again?");
+				restart=c.readLine();
+			}
+			if(total<total2 && total2 <21){
+				c.clear();
+				c.println("PLAYER 2 WINS");
+				c.println("Would you like to play again?");
+				restart=c.readLine();
+			}
+			if(total==total2){
+				c.clear();
+				c.println("Tie");
+				c.println("Would you like to play again?");
+				restart=c.readLine();
+			}
+		}while(restart.equalsIgnoreCase("yes"));
+	}
+	public static int getCardTotal2(int card3, int card4){
+		return card3+card4;
+	}
 
+	public static void restart(){
 
 
 	}
 
-	public static void getRandomCards(int Card1, int Card2){ // DRAWS A RANDOM CARD FOR CARDS
+
+
+	public static int getCardTotal(int card1, int card2){ // DRAWS A RANDOM CARD FOR CARDS
+		return card1+card2;
+	}
+
+
+	public static int getRandomCard(){
+		return (int)(Math.random()*13);
+	}
+
+
+	public static void drawCard(int card, int x,int y){ //DRAW CARD METHOD
+
+		BufferedImage[] pics = new BufferedImage[14];
+		//CARD IMAGE
 		
 
-		Card1=(Card[(int)Math.random()*12]);
-		Card2=(Card[(int)Math.random()*12]);
+
+		if(card==1 ){
+			c.drawImage(pics[0], x,y,null);
+		}
+		if(card==2 ){
+			c.drawImage(pics[1], x,y,null);
+		}
+		if(card==3){
+			c.drawImage(pics[2],x,y,null);
+		}
+		if(card==4 ){
+			c.drawImage(pics[3],x,y,null);
+		}
+		if(card==5 ){
+			c.drawImage(pics[4],x,y,null);
+		}
+		if(card==6){
+			c.drawImage(pics[5],x,y,null);
+		}
+		if(card==7 ){
+			c.drawImage(pics[6],x,y,null);
+		}
+		if(card==8 ){
+			c.drawImage(pics[7],x,y,null);
+		}
+		if (card==9){
+			c.drawImage(pics[8], x, y, null);
+		}
+		if (card==10){
+			c.drawImage(pics[9], x, y, null);
+		}
+		if (card==11){
+			c.drawImage(pics[10], x, y, null);
+		}
+		if (card==12){
+			c.drawImage(pics[11], x, y, null);
+			
 		
-		 Total=Card1+Card2;
-	}
-	public static void getRandomCard2(){ //DRAWS A CARD FOR CARD2 SLOT 
-		
+		}
 	
-		Card2=(Card[(int)Math.random()*12+0]);
-	}
-
-	public static void getRandomCard1(){
-		
-		Card1=(Card[(int)Math.random()*12+2]);
-	}
-
-
-	public static void Cards(){ //cards method
-
-
-		if(Card1==1 || Card2==1){
-
-			//c.drawImage(pics[2], 100,100,null);
-			
-
-		}
-
-		if(Card1==2 || Card2==2){
-
-			//c.drawImage(pics[2], 100,100,null);
-		}
-		if(Card1==3 || Card2==3){
-			//c.drawImage(pics[2],100,100,null);
-		}
-		if(Card1==4 || Card2==4){
-			
-			//
-		}
 	}
 
 }//class
