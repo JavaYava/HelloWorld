@@ -16,24 +16,39 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>pics/2 card.png</name>
+			<type>1</type>
+			<location>C:/Users/324062843/Downloads/2 card.png</location>
+		</link>
+		<link>
+			<name>pics/3 card.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/3%20card.png</locationURI>
+		</link>
+		<link>
+			<name>pics/4 card.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/4%20card.jpg</locationURI>
+		</link>
+		<link>
+			<name>pics/5 card.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/5%20card.png</locationURI>
+		</link>
+		<link>
 			<name>pics/INSTRUCTIONS.jpg</name>
 			<type>1</type>
 			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/INSTRUCTIONS.jpg</locationURI>
 		</link>
 		<link>
-			<name>pics/INSTRUCTIONS.png</name>
+			<name>pics/TITLEPAGE1.jpg</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/My%20Pictures/INSTRUCTIONS.png</locationURI>
+			<location>C:/Users/324062843/Downloads/TITLEPAGE1.jpg</location>
 		</link>
 		<link>
-			<name>pics/TITLE PAGE.jpg</name>
+			<name>pics/diamond-ace.png</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/TITLE%20PAGE.jpg</locationURI>
-		</link>
-		<link>
-			<name>pics/TITLE PAGE.png</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/My%20Pictures/TITLE%20PAGE.png</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/My%20Pictures/diamond-ace.png</locationURI>
 		</link>
 		<link>
 			<name>pics/king.jpg</name>
