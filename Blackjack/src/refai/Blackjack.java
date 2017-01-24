@@ -5,7 +5,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-
+/*Blackjack.java
+ * This program runs a two player game of blackjack.
+ * Jan/24/17
+ * Emira Refai
+ */
 public class Blackjack{
 	//GLOBAL VARIABLES
 	static int[] card = new int [13];
@@ -38,7 +42,7 @@ public class Blackjack{
 
 		String action;
 
-		//1. DISPLAY TITLE PAGE
+		//Displays the title page.
 		try {
 			c.drawImage(ImageIO.read(new File("pics/TITLEPAGE1.jpg")), 0, 0, 600,500,null);
 		} catch (IOException e) {
@@ -49,8 +53,8 @@ public class Blackjack{
 		c.getChar();
 
 		c.clear();
-		//2. Instructions 
-
+		
+		//Displays  Instructions .
 		try {
 			c.drawImage(ImageIO.read(new File("pics/instructions.jpg")), 0, 0, 600,500, null);
 		} catch (IOException e) {
@@ -77,7 +81,9 @@ public class Blackjack{
 		while(total<21 && action.equalsIgnoreCase("Hit")){ //HIT 
 
 			int cardhit=getRandomCard();
-			drawCard(cardhit,100,200);
+			drawCard(card1,100,200);
+			drawCard(card2,100,300);
+			drawCard(cardhit,100,400);
 			total=getCardTotal(total,card[cardhit]);
 			c.println(total);
 
@@ -86,9 +92,15 @@ public class Blackjack{
 			c.clear();
 		}
 
-		c.println(total); // WHEN PLAYER 1 STOPS HITTING.
+		c.println(total); // When player one stops playing.
 
 		if(total>21){
+			try {
+				c.drawImage(ImageIO.read(new File("pics/smallblack.png")), 0, 0, 80,80, null);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			c.clear();
 			c.println("BUST PLAYER 2 WINS");
 			c.println("Would you like to play again?");
@@ -125,30 +137,36 @@ public class Blackjack{
 
 
 
-		//ADD PLAYER 2 HERE
+		//Player 2 
 		c.clear();
 		String action2;
 		c.println("Player 2 Press any key to start");
 		c.getChar();
 		c.clear();
 
-		//GETS CARD PICTURE BASED ON RANDOM NUMBER
+		//gets card picture depending on the number and displays it.
 		int card3=getRandomCard();
 		int card4=getRandomCard();
 		drawCard(card3,100,200); 
 		drawCard(card4,100,300);
-
-		int total2=getCardTotal(card[card3],card[card4]); // GETS CARD VALUES 
+		
+		
+		
+		//Gets card values.
+		int total2=getCardTotal(card[card3],card[card4]);
 		c.println(total2);
 
 		c.println("Would you like to hit or stay?");
 		action2=c.readLine();
+		
+		//Loops player 2 to either draw another card or stop.
 
 		while(total2<21 && action2.equalsIgnoreCase("Hit")){ //HIT 
 			c.clear();
-
 			int cardhit=getRandomCard();
-			drawCard(cardhit,100,200);
+			drawCard(card3,100,200); 
+			drawCard(card4,100,300);
+			drawCard(cardhit,100,400);
 			total2=getCardTotal(total2,card[cardhit]);
 			c.println(total2);
 
@@ -522,10 +540,11 @@ public class Blackjack{
 	 * @param 
 	 */
 
-
-	public static void drawCard(int card, int x,int y){ //DRAW CARD METHOD
+	//DRAW CARD METHOD
+	public static void drawCard(int card, int x,int y){ 
 
 		BufferedImage[] pics = new BufferedImage[13];
+		//Imports pictures
 		try {
 
 			pics[0]=ImageIO.read(new File("pics/1 card.png"));
@@ -542,32 +561,13 @@ public class Blackjack{
 			pics[11]=ImageIO.read(new File("pics/queen card.jpg"));
 			pics[12]=ImageIO.read(new File("pics/king card.jpg"));
 
-			//CARD VALUES!
-			//card[0] = 1; 
-			//card[1] = 2;
-			//card[2] = 3;
-			//card[3] = 4;
-			//card[4] = 5;
-			//card[5] = 6;
-			//card[6] = 7;
-			//card[7] = 8;
-			//card[8] = 9;
-			//card[9] = 10;
-			//card[10] = 10;
-			//card[11] = 10;
-			//card[12] = 10;
-
-
-
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			c.println("Sorry There Was An Error");
 			e.printStackTrace();
 		}
 		//CARD IMAGE
-
 		c.drawImage(pics[card], x,y,150,150,c);
-
 	}
 
 }//class
