@@ -46,12 +46,10 @@ public class Blackjack{
 		try {
 			c.drawImage(ImageIO.read(new File("pics/TITLEPAGE1.jpg")), 0, 0, 600,500,null);
 		} catch (IOException e) {
-			c.println("WHOOPS");
+			c.println("Sorry there was an error press any key to start");
 		}
 
-
 		c.getChar();
-
 		c.clear();
 		
 		//Displays  Instructions .
@@ -95,12 +93,7 @@ public class Blackjack{
 		c.println(total); // When player one stops playing.
 
 		if(total>21){
-			try {
-				c.drawImage(ImageIO.read(new File("pics/smallblack.png")), 0, 0, 80,80, null);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			c.clear();
 			c.println("BUST PLAYER 2 WINS");
 			c.println("Would you like to play again?");
